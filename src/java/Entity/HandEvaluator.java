@@ -8,26 +8,26 @@ import java.util.Map;
 public class HandEvaluator {
     private static final Map<Integer, String> RANK_NAMES = new HashMap<>();
     static {
-        RANK_NAMES.put(1, "Ace");
-        RANK_NAMES.put(2, "Two");
-        RANK_NAMES.put(3, "Three");
-        RANK_NAMES.put(4, "Four");
-        RANK_NAMES.put(5, "Five");
-        RANK_NAMES.put(6, "Six");
-        RANK_NAMES.put(7, "Seven");
-        RANK_NAMES.put(8, "Eight");
-        RANK_NAMES.put(9, "Nine");
-        RANK_NAMES.put(10, "Ten");
-        RANK_NAMES.put(11, "Jack");
-        RANK_NAMES.put(12, "Queen");
-        RANK_NAMES.put(13, "King");
+        RANK_NAMES.put(1, "A");
+        RANK_NAMES.put(2, "2");
+        RANK_NAMES.put(3, "3");
+        RANK_NAMES.put(4, "4");
+        RANK_NAMES.put(5, "5");
+        RANK_NAMES.put(6, "6");
+        RANK_NAMES.put(7, "7");
+        RANK_NAMES.put(8, "8");
+        RANK_NAMES.put(9, "9");
+        RANK_NAMES.put(10, "T");
+        RANK_NAMES.put(11, "J");
+        RANK_NAMES.put(12, "Q");
+        RANK_NAMES.put(13, "K");
     }
     private static final Map<Integer, String> SUIT_NAMES = new HashMap<>();
     static {
-        SUIT_NAMES.put(0, "Spades");
-        SUIT_NAMES.put(1, "Hearts");
-        SUIT_NAMES.put(2, "Diamonds");
-        SUIT_NAMES.put(3, "Clubs");
+        SUIT_NAMES.put(0, "♠");
+        SUIT_NAMES.put(1, "♥");
+        SUIT_NAMES.put(2, "♦");
+        SUIT_NAMES.put(3, "♣");
     }
 
     public static int evaluateHand(ArrayList<Card> hand ,ArrayList<Card> communityCards) {
