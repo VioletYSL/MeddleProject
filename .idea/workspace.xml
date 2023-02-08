@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="123">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="02082143">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Controller/TexasHoldem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Entity/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Entity/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Entity/EvaDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Entity/HandEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/HandEvaluator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/java/Entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +31,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.EvaDemo">
-    <configuration name="EvaDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="EvaDemo" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="java.Entity.EvaDemo" />
       <module name="MeddleProject" />
       <extension name="coverage">
@@ -74,7 +67,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EvaDemo" />
         <item itemvalue="Application.meddle.Entity.EvaDemo" />
         <item itemvalue="Application.Main" />
       </list>
@@ -96,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675774858409</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="02082143">
+      <created>1675863842077</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675863842077</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +123,53 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="123" />
-    <option name="LAST_COMMIT_MESSAGE" value="123" />
+    <MESSAGE value="02082143" />
+    <option name="LAST_COMMIT_MESSAGE" value="02082143" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MeddleProject$EvaDemo.ic" NAME="EvaDemo Coverage Results" MODIFIED="1675864024185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>.*</FILTER>
+    </SUITE>
   </component>
 </project>

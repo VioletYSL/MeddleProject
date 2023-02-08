@@ -11,7 +11,7 @@ public class EvaDemo {
 
 // Create the deck of cards
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 13; j++) {
+            for (int j = 1; j <=13; j++) {
                 cards.add(new Card(i, j));
             }
         }
@@ -38,28 +38,60 @@ public class EvaDemo {
 // Check if there are 5 or more of the same suit
         for (int count : suitCount) {
             if (count >= 5) {
-                System.out.println("There are 5 or more cards of the same suit.");
+                System.out.println("同花");
                 break;
             }
         }
 //        比較是否為四條,三條,
         int[] rankCount = new int[13];
+        int pair =0;
+        boolean hasThree = false;
+        boolean hasTwo = false;
         for (Card card:hand) {
             int rank = card.getRank();
-            rankCount[rank]++;
+            rankCount[rank-1]++;
         }
+        String type = "高牌";
         for (int count:rankCount) {
-            if(count == 4){
-                System.out.println("4條");
-                break;
+            if(count ==0){
+                continue;
+            }else if(count == 4){
+                type= "4條";
+
             } else if (count==3) {
-                System.out.println("3條");
-                break;
+                hasThree = true;
+              if (hasThree) {
+                  type = "set";
+              }
             } else if (count == 2) {
-                System.out.println("pair");
-                break;
+                pair +=1;
+                hasTwo = true;
+                if (hasThree && hasTwo) {
+                    type ="This is a FULL-HOUSE.";
+
+                } else if (hasTwo) {
+                    if(pair>=2){
+                        type ="2 pairs";
+                    }else{
+                        type ="pair";
+                    }
+                }
+
+
+            }else if (!hasThree && !hasTwo){
+
             }
+
+
+
+
+
+
+
         }
+        System.out.println(type);
+    }
+
 //          方法2 判斷排型
 
 //        int Pukelevel = -1;
@@ -89,5 +121,7 @@ public class EvaDemo {
 //            case 0:
 //                System.out.printf("高牌");
 //        }
+
     }
-}
+
+
