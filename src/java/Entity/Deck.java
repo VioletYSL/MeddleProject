@@ -1,14 +1,15 @@
 package java.Entity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck {
     private ArrayList<Card> cards;
 
     public Deck() {
         cards = new ArrayList<>();
-        for (int i = 1; i <= 13; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 1; j <= 13; j++) {
                 cards.add(new Card(i, j));
             }
         }
@@ -16,12 +17,14 @@ public class Deck {
 
     public void shuffle() {
         // Implement a shuffle algorithm here
-
+        Collections.shuffle(cards);
     }
 
     public Card dealCard() {
         // Return the top card from the deck and remove it from the list
-        return null;
+        Card d1 = cards.get(0);
+        cards.remove(0);
+        return d1;
     }
 }
 

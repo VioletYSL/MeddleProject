@@ -3,7 +3,7 @@ package java.Entity;
 import java.util.ArrayList;
 
 public class Player {
-    private String name;
+    private String  name;
     private ArrayList<Card> cards;
     private int chips;
     private boolean isFolded;

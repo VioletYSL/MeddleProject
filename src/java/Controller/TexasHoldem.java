@@ -16,6 +16,10 @@ public class TexasHoldem {
     private ArrayList<Card> communityCards;
     private int dealerIndex;
 
+
+    public static void main(String[] args){
+
+    }
     public TexasHoldem() {
         players = new ArrayList<>();
         deck = new Deck();
