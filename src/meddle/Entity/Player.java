@@ -1,4 +1,4 @@
-package java.Entity;
+package meddle.Entity;
 
 import java.util.ArrayList;
 

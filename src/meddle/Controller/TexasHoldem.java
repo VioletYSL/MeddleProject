@@ -1,11 +1,12 @@
-package java.Controller;
+package meddle.Controller;
 
 
 
-import java.Entity.Card;
-import java.Entity.Deck;
-import java.Entity.HandEvaluator;
-import java.Entity.Player;
+import meddle.Entity.Card;
+import meddle.Entity.Deck;
+import meddle.Entity.HandEvaluator;
+import meddle.Entity.Player;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

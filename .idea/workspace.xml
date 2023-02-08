@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="02081530">
+    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="123">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Controller/TexasHoldem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Entity/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Entity/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Entity/EvaDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Entity/HandEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/HandEvaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java/Entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,31 +26,45 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectId" id="2LPZSpT3ZsDdo3vsK9dxsxp4IZR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.EvaDemo">
     <configuration name="EvaDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="java.Entity.EvaDemo" />
       <module name="MeddleProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="java.Entity.*" />
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="MeddleProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="meddle.Entity.EvaDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="meddle.Entity.EvaDemo" />
+      <module name="MeddleProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="meddle.Entity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -61,6 +75,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.EvaDemo" />
+        <item itemvalue="Application.meddle.Entity.EvaDemo" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -80,21 +96,7 @@
       <option name="project" value="LOCAL" />
       <updated>1675774858409</updated>
     </task>
-    <task id="LOCAL-00002" summary="02081446">
-      <created>1675839219560</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1675839219560</updated>
-    </task>
-    <task id="LOCAL-00003" summary="02081530">
-      <created>1675841424246</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1675841424246</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,8 +124,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="123" />
-    <MESSAGE value="02081446" />
-    <MESSAGE value="02081530" />
-    <option name="LAST_COMMIT_MESSAGE" value="02081530" />
+    <option name="LAST_COMMIT_MESSAGE" value="123" />
   </component>
 </project>
