@@ -42,21 +42,49 @@ public class EvaDemo {
                 break;
             }
         }
-        //比較是否為四條,三條,
-        int[] rankCount = new int[13];
-        for (Card card:hand) {
-            int runk = card.getRank();
-            rankCount[runk]++;
-        }
-        for (int count:rankCount) {
-            if(count == 4){
-                System.out.println("4條");
-                break;
-            } else if (count==3) {
-                System.out.println("3條");
-                break;
+//        //比較是否為四條,三條,
+//        int[] rankCount = new int[13];
+//        for (Card card:hand) {
+//            int runk = card.getRank();
+//            rankCount[runk]++;
+//        }
+//        for (int count:rankCount) {
+//            if(count == 4){
+//                System.out.println("4條");
+//                break;
+//            } else if (count==3) {
+//                System.out.println("3條");
+//                break;
+//            }
+//        }
+//          方法2 判斷排型
+
+        int Pukelevel = -1;
+        int flag = 0;
+        for (int i = 0; i < hand.size(); i++)
+        {
+            for (int j = i + 1; j < hand.size(); j++)
+            {
+                if (hand.get(i).getRank() == hand.get(j).getRank())
+                {
+                    flag++;
+                }
             }
         }
-
+        switch (flag)
+        {
+            case 6:
+                System.out.printf("四條");
+            case 4:
+                System.out.printf("葫蘆");
+            case 3:
+                System.out.printf("三條");
+            case 2:
+                System.out.printf("兩對");
+            case 1:
+                System.out.printf("對子");
+            case 0:
+                System.out.printf("高牌");
+        }
     }
 }
