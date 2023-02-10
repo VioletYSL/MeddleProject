@@ -19,14 +19,23 @@ public class EvaDemo2 {
                 cards.add(new Card(i, j));
             }
         }
-        Collections.shuffle(cards);
-        for (int i = 0; i < 2; i++) {
-            hand.add(cards.get(i));
-        }for (int i = 2; i < 7; i++) {
-            table.add(cards.get(i));
-        }
-        allcards.addAll(hand);
-        allcards.addAll(table);
+//        Collections.shuffle(cards);
+//        for (int i = 0; i < 2; i++) {
+//            hand.add(cards.get(i));
+//        }for (int i = 2; i < 7; i++) {
+//            table.add(cards.get(i));
+//        }
+//        allcards.addAll(hand);
+//        allcards.addAll(table);
+        Card c1 =new Card(0,9);
+        Card c2 =new Card(0,10);
+        Card c3 =new Card(0,7);
+        Card c4 =new Card(0,4);
+        Card c5 =new Card(0,11);
+        Card c6 =new Card(0,8);
+        Card c7 =new Card(0,13);
+        allcards.add(c1);allcards.add(c2);allcards.add(c3);allcards.add(c4);
+        allcards.add(c5);allcards.add(c6);allcards.add(c7);
 
         Collections.sort(allcards, (o1, o2) -> {
             if (o1.getRank() != o2.getRank()) {
@@ -86,19 +95,27 @@ public class EvaDemo2 {
                 isRSF =false;
             }while(isRSF);
             do{
-                for (int i = 0; i < sameSuitCards.size() - 4; i++) {
+                int maxrank = 0;
+                for (int j = 12; j > 3; j--) {       //判斷順子
+                    int count = 0;
+                    if (rankCount[j] >= 1) {
+                        for (int k = 1; k < 5; k++) {
+                            if (rankCount[j-k] < 1) {
+                                isStraightFlush =false;
+                            }else count+=1;
+                        }
+                        if (count < 4) {
+                            isStraightFlush =false;
 
-                    for (int j = 0; j < 5; j++) {
-                        if (sameSuitCards.get(i + j).getRank() != sameSuitCards.get(i).getRank() + j) {
-                            isStraightFlush = false;
                             break;
                         }
                     }
                     if (isStraightFlush) {
+                        maxrank =j+1;
                         return "同花順";
                     }
-                }
-                break;
+                }break;
+
             }while(isStraightFlush);
             return "同花";
         }else {
