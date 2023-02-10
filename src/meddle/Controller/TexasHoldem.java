@@ -17,10 +17,6 @@ public class TexasHoldem {
     private ArrayList<Card> communityCards;
     private int dealerIndex;
 
-
-    public static void main(String[] args){
-
-    }
     public TexasHoldem() {
         players = new ArrayList<>();
         deck = new Deck();
@@ -46,11 +42,11 @@ public class TexasHoldem {
         }
 
         // Place a bet to start the pot
-        for (Player player : players) {
-            System.out.println("Player " + player.getName() + ", place your bet: ");
-            int bet = scanner.nextInt();
-            player.placeBet(bet);
-        }
+//        for (Player player : players) {
+//            System.out.println("Player " + player.getName() + ", place your bet: " );
+//            int bet = scanner.nextInt();
+//            player.placeBet(bet);
+//        }
 
         // Flop: deal three community cards
         for (int i = 0; i < 3; i++) {
@@ -95,6 +91,9 @@ public class TexasHoldem {
                 if (playerHandValue > winningHandValue) {
                     winner = player;
                     winningHandValue = playerHandValue;
+                }else{
+
+
                 }
             }
         }

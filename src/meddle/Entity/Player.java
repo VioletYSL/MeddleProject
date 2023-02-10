@@ -11,7 +11,7 @@ public class Player {
     public Player(String name) {
         this.name = name;
         cards = new ArrayList<>();
-        chips = 0;
+        chips = 500;
         isFolded = false;
     }
 

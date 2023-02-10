@@ -20,26 +20,14 @@ public class EvaDemo {
         Collections.shuffle(cards);
 
 // Pick 7 cards
-//        for (int i = 0; i < 7; i++) {
-//            hand.add(cards.get(i));
-//        }
+        for (int i = 0; i < 2; i++) {
+            hand.add(cards.get(i));
+        }for (int i = 0; i < 5; i++) {
+            cards.add(cards.get(i));
+        }
 
 
-        Card c1 = new Card(0, 3);
-        Card c2 = new Card(0, 6);
-        Card c3 = new Card(3, 8);
-        Card c4 = new Card(2, 8);
-        Card c5 = new Card(0, 4);
-        Card c6 = new Card(1, 5);
-        Card c7 = new Card(0, 2);
 
-        hand.add(c1);
-        hand.add(c2);
-        hand.add(c3);
-        hand.add(c4);
-        hand.add(c5);
-        hand.add(c6);
-        hand.add(c7);
         // Print the hand
         for (Card card : hand) {
             System.out.println("Suit: " + card.getSuit() + ", Rank: " + card.getRank());
@@ -85,46 +73,30 @@ public class EvaDemo {
                 pair += 1;
             }
         }
-        int t=0;
-        for (int j = 0; j < 9; j++) {       //判斷順子
+        int maxrank = 0;
+        for (int j = 12; j > 3; j--) {       //判斷順子
             int count = 0;
             if (rankCount[j] >= 1) {
                 for (int k = 1; k < 5; k++) {
-                    if (rankCount[k + j] >= 1) {
+                    if (rankCount[j-k] >= 1) {
                         count += 1;
-                        if (count == 4) {
-                            straight += 1;
-                            t=j;
-                            break;
-                        }
-                    }
-
+                    }else break;
+                }
+                if (count >= 4) {
+                    straight += 1;
+                    maxrank =j+1;
+                    break;
                 }
             }
         }
 
-        if (rankCount[0] >= 1) {       // 判斷是否為TA順子
-            for (int i = 9; i <= 12; i++) {
-                if (rankCount[i] >= 1) {
-                    tcount += 1;
-                }
-
-            }
-            if (tcount == 4) {
-                straight += 1;
-            }
-        }
-
-        if(straightfiush ==1){
-            type ="同花順";
-        } else if(king ==1){
+         if(king ==1){
             type ="四條";
         }else if(set ==2 | (set ==1 && pair >=1)){
             type ="FULL-HOUSE";
-        } else if(suit ==1){
-            type = "同花";
-        } else if (straight ==1) {
+        }else if (straight ==1) {
             type ="順子";
+            System.out.printf("maxrank: %s\n",maxrank);
         }else if (set !=0){
             type = "三條";
         } else if (pair!=0) {
