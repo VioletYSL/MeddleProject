@@ -15,25 +15,18 @@ public class EvaDemo2 {
         String type ="高牌";
 
         for (int i = 0; i < 4; i++) {
-            for (int j = 2; j <= 14; j++) {
+            for (int j = 1; j <= 13; j++) {
                 cards.add(new Card(i, j));
             }
         }
-//        Collections.shuffle(cards);
-//        for (int i = 0; i < 2; i++) {
-//            hand.add(cards.get(i));
-//        }for (int i = 2; i < 7; i++) {
-//            table.add(cards.get(i));
-//        }
-//        allcards.addAll(hand);
-//        allcards.addAll(table);
-        Card c1 =new Card(0,14);
-        Card c2 =new Card(0,2);
-        Card c3 =new Card(0,3);
-        Card c4 =new Card(0,4);
-        Card c5 =new Card(0,5);
-        Card c6 =new Card(2,8);
-        Card c7 =new Card(1,7);
+        Collections.shuffle(cards);
+        for (int i = 0; i < 2; i++) {
+            hand.add(cards.get(i));
+        }for (int i = 2; i < 7; i++) {
+            table.add(cards.get(i));
+        }
+        allcards.addAll(hand);
+        allcards.addAll(table);
 
         Collections.sort(allcards, (o1, o2) -> {
             if (o1.getRank() != o2.getRank()) {
@@ -72,7 +65,7 @@ public class EvaDemo2 {
         int[] rankCount = new int[13];
         for (Card card:allcards) {
             int runk = card.getRank();
-            rankCount[runk-2]++;
+            rankCount[runk-1]++;
         }
 
         if (sameSuitCards.size() >= 5) {
@@ -81,9 +74,9 @@ public class EvaDemo2 {
 
 
             do{
-                if(sameSuitCards.get(4).getRank()== 14){
-                    for (int k=0;k<4;k++){
-                        if(sameSuitCards.get(k).getRank()!= 10+k){
+                if(sameSuitCards.get(0).getRank()== 1){
+                    for (int k=1;k<5;k++){
+                        if(sameSuitCards.get(k).getRank()!= 9+k){
                             isRSF =false;
                             break;
                         }
