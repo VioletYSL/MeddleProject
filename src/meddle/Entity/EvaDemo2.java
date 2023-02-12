@@ -29,8 +29,8 @@ public class EvaDemo2 {
 //        allcards.addAll(table);
         Card c1 =new Card(0,9);
         Card c2 =new Card(0,10);
-        Card c3 =new Card(0,7);
-        Card c4 =new Card(0,4);
+        Card c3 =new Card(0,1);
+        Card c4 =new Card(1,4);
         Card c5 =new Card(0,11);
         Card c6 =new Card(0,8);
         Card c7 =new Card(0,13);
@@ -95,27 +95,19 @@ public class EvaDemo2 {
                 isRSF =false;
             }while(isRSF);
             do{
-                int maxrank = 0;
-                for (int j = 12; j > 3; j--) {       //判斷順子
-                    int count = 0;
-                    if (rankCount[j] >= 1) {
-                        for (int k = 1; k < 5; k++) {
-                            if (rankCount[j-k] < 1) {
-                                isStraightFlush =false;
-                            }else count+=1;
-                        }
-                        if (count < 4) {
-                            isStraightFlush =false;
+                for (int i = 0; i < sameSuitCards.size() - 4; i++) {
 
+                    for (int j = 0; j < 5; j++) {
+                        if (sameSuitCards.get(i + j).getRank() == sameSuitCards.get(i).getRank() + j) {
                             break;
+                        }else {
+                            isStraightFlush = false;
                         }
                     }
-                    if (isStraightFlush) {
-                        maxrank =j+1;
-                        return "同花順";
-                    }
-                }break;
-
+                }
+                if (isStraightFlush) {
+                    return "同花順";
+                }
             }while(isStraightFlush);
             return "同花";
         }else {

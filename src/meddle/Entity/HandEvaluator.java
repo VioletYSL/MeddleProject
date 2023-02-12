@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class HandEvaluator {
     private static final Map<Integer, String> RANK_NAMES = new HashMap<>();
-    static {
+     {
         RANK_NAMES.put(1, "A");
         RANK_NAMES.put(2, "2");
         RANK_NAMES.put(3, "3");
@@ -83,14 +83,15 @@ public class HandEvaluator {
                 for (int i = 0; i < sameSuitCards.size() - 4; i++) {
 
                     for (int j = 0; j < 5; j++) {
-                        if (sameSuitCards.get(i + j).getRank() != sameSuitCards.get(i).getRank() + j) {
-                            isStraightFlush = false;
+                        if (sameSuitCards.get(i + j).getRank() == sameSuitCards.get(i).getRank() + j) {
                             break;
+                        }else {
+                            isStraightFlush = false;
                         }
                     }
-                    if (isStraightFlush) {
-                        return 9;
-                    }
+                }
+                if (isStraightFlush) {
+                    return 9;
                 }
                 break;
             }while(isStraightFlush);

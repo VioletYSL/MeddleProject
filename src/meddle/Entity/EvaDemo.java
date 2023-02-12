@@ -27,13 +27,15 @@ public class EvaDemo {
 //        }
 //        allcards.addAll(hand);
 //        allcards.addAll(table);
-        Card c1 =new Card(0,14);
-        Card c2 =new Card(0,2);
-        Card c3 =new Card(0,3);
+        Card c1 =new Card(0,9);
+        Card c2 =new Card(0,10);
+        Card c3 =new Card(0,7);
         Card c4 =new Card(0,4);
-        Card c5 =new Card(0,5);
-        Card c6 =new Card(2,8);
-        Card c7 =new Card(1,7);
+        Card c5 =new Card(0,11);
+        Card c6 =new Card(0,8);
+        Card c7 =new Card(0,13);
+        allcards.add(c1);allcards.add(c2);allcards.add(c3);allcards.add(c4);
+        allcards.add(c5);allcards.add(c6);allcards.add(c7);
 
         Collections.sort(allcards, (o1, o2) -> {
             if (o1.getRank() != o2.getRank()) {
@@ -96,16 +98,17 @@ public class EvaDemo {
                 for (int i = 0; i < sameSuitCards.size() - 4; i++) {
 
                     for (int j = 0; j < 5; j++) {
-                        if (sameSuitCards.get(i + j).getRank() != sameSuitCards.get(i).getRank() + j) {
-                            isStraightFlush = false;
+                        if (sameSuitCards.get(i + j).getRank() == sameSuitCards.get(i).getRank() + j) {
                             break;
+                        }else {
+                            isStraightFlush = false;
                         }
                     }
-                    if (isStraightFlush) {
-                        return "同花順";
-                    }
                 }
-                break;
+                if (isStraightFlush) {
+                    return "同花順";
+                }
+
             }while(isStraightFlush);
             return "同花";
         }else {
