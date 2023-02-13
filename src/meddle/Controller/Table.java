@@ -1,9 +1,7 @@
 package meddle.Controller;
-import meddle.Entity.Card;
-import meddle.Entity.Deck;
-import meddle.Entity.HandEvaluator;
-import meddle.Entity.Player;
+import meddle.Entity.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
@@ -16,6 +14,8 @@ public class Table {
 
     private ArrayList<Card> communityCards;
     private Deck deck;
+    private PotCalculator PC ;
+
 
     // 添加玩家到座位陣列
 //    public void addPlayer(Player player) {
@@ -57,11 +57,17 @@ public class Table {
         int action = currentPlayer.chooseAction(choose);
         switch (action) {
             case 1:
-                int bet =0;
-                currentPlayer.call();
+                currentPlayer.call(PC.getBet());
+                PC.addToPot(PC.getBet());
                 break;
             case 2:
-                currentPlayer.raise();
+                Scanner s2 = new Scanner(System.in);
+                int n = s2.nextInt();
+                PC.placeBet(n);
+                currentPlayer.raise(PC.getBet());
+                PC.addToPot(PC.getBet());
+
+
                 break;
             case 3:
                 currentPlayer.fold();
@@ -80,6 +86,7 @@ public class Table {
         deck = new Deck();
         deck.shuffle();
         communityCards = new ArrayList<>();
+        PC = new PotCalculator();
 
 
         for (int i = 0; i < 2; i++) {
@@ -92,12 +99,29 @@ public class Table {
         long playerCount = Arrays.stream(seats)
                 .filter(Objects::nonNull)
                 .count();
-        for (int j=0;j<players.size();j++){
-            currentPlayerIndex = (currentPlayerIndex == playerCount) ? 0 : currentPlayerIndex;
-            System.out.printf("玩家 %s  %s\n" ,players.get(currentPlayerIndex).getName(),players.get(currentPlayerIndex).getPosition());
-            playerAction(currentPlayerIndex);
-            currentPlayerIndex = (currentPlayerIndex + 1) % maxPlayers;
+        seats[1].raise(PC.getBet());
+        PC.placeBet(1);
+        PC.addToPot(PC.getBet());
+        seats[2].raise(2* PC.getBet());
+        PC.placeBet(2);
+        PC.addToPot(PC.getBet());
+
+        do {
+            if(!allButOneFolded()) {
+                currentPlayerIndex = (currentPlayerIndex == playerCount) ? 0 : currentPlayerIndex;
+                if (!players.get(currentPlayerIndex).hasFolded()) {
+                    System.out.printf("玩家 %s 位置: %s 目前BET: %d  目前POT: %d \n", players.get(currentPlayerIndex).getName(), players.get(currentPlayerIndex).getPosition(), PC.getBet(), PC.getPot());
+                    playerAction(currentPlayerIndex);
+                }
+                currentPlayerIndex = (currentPlayerIndex + 1) % maxPlayers;
+            }else{
+                break;
+            }
+        }while (!allPlayershasaction());
+        if (allButOneFolded()){
+            end();
         }
+        PC.resetBet();
         System.out.println("翻牌");
         for(int v=0;v<3;v++){
             communityCards.add(deck.dealCard());
@@ -107,17 +131,17 @@ public class Table {
             for (Card deckcards:communityCards) {
                 System.out.printf("%s  %s \n",deckcards.getSuit(),deckcards.getRank());
             }
-
-            while(allButOneFolded()); {
+             currentPlayerIndex = (players.indexOf(seats[1]) ) % maxPlayers;
+            do{
                     currentPlayerIndex = (currentPlayerIndex == playerCount) ? 0 : currentPlayerIndex;
                     if (!players.get(currentPlayerIndex).hasFolded()) {
-                        System.out.printf("玩家 %s\n" ,players.get(currentPlayerIndex).getName());
+                        System.out.printf("玩家 %s 位置: %s 目前BET: %d  目前POT: %d \n" ,players.get(currentPlayerIndex).getName(),players.get(currentPlayerIndex).getPosition(),PC.getBet(),PC.getPot());
                         playerAction(currentPlayerIndex);
                     }
                     currentPlayerIndex = (currentPlayerIndex + 1) % maxPlayers;
 
 
-            }
+            }while (!allPlayershasaction()||allButOneFolded());
             System.out.println(i);
             System.out.println("------------------");
         }
@@ -141,11 +165,11 @@ public class Table {
     }
 
     // 是否所有玩家都過牌
-    private boolean allPlayersChecked() {
+    private boolean allPlayershasaction() {
         for (Player v:players) {
 
-            if (v.getHasAction().equals("noaction") || !v.getHasAction().equals("check")){
-            return false;
+            if (!v.getHasAction()){
+                return false;
             }
         }
         return true;
@@ -159,9 +183,17 @@ public class Table {
                 notFlod += 1;
             }
         }
-        if(notFlod!=1){
+        if(notFlod!=players.size()-1){
+
             return false;
         }
         return true;
+    }
+    private void end(){
+        for (Player pp:players) {
+            if(!pp.hasFolded()) {
+                System.out.println("winner id : "+ pp.getName());
+            }
+        }
     }
 }

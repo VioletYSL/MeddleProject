@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Deck {
+    private final int maxPlayers = 12;
+    private ArrayList<Player> players = new ArrayList<>() ;
+    private Player[] seats = new Player[maxPlayers];
     private ArrayList<Card> cards;
-
+    private int pot;
+    private int bet;
     public Deck() {
         cards = new ArrayList<>();
         for (int i = 0; i < 4; i++) {

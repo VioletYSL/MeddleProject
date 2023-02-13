@@ -6,15 +6,15 @@ public class PotCalculator {
 
     public PotCalculator() {
         this.pot = 0;
-        this.bet = 0;
+        this.bet = 10;
     }
 
     public void addToPot(int amount) {
         this.pot += amount;
     }
 
-    public void placeBet(int amount) {
-        this.bet += amount;
+    public void placeBet(int n) {
+        this.bet = n*bet;
     }
 
     public void resetBet() {

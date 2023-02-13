@@ -1,17 +1,15 @@
 package meddle.Entity;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Player {
     private String  name;
     private ArrayList<Card> cards;
     private int chips;
     private boolean isFolded;
-    private Boolean isCheck;
 
-
-
-    private String  hasAction;
+    private Boolean  hasAction;
 
     public String getPosition() {
         return position;
@@ -27,7 +25,7 @@ public class Player {
         cards = new ArrayList<>();
         chips = 500;
         isFolded = false;
-        hasAction = "notaction";
+        hasAction = false;
 
     }
 
@@ -38,12 +36,16 @@ public class Player {
     public ArrayList<Card> getCards() {
         return cards;
     }
+    public void addchips(int pot){
+        chips += pot;
+    }
 
     public void placeBet(int bet) {
         chips -= bet;
     }
 
     public void fold() {
+        setHasAction(true);
         isFolded = true;
     }
 
@@ -60,32 +62,27 @@ public class Player {
         return choose;
     }
 
-    public void call() {
-
-
-
-        setHasAction("raise");
+    public void call(int bet) {
+    chips = chips -bet;
+        setHasAction(true);
     }
 
-    public void raise() {
+    public void raise(int bet) {
+    chips =chips -bet;
 
-
-
-
-
-        setHasAction("raise");
+    setHasAction(false);
     }
 
     public void check() {
-        setHasAction("check");
+        setHasAction(true);
 
     }
 
-    public String getHasAction() {
+    public Boolean getHasAction() {
         return hasAction;
     }
 
-    public void setHasAction(String hasAction) {
+    public void setHasAction(Boolean hasAction) {
         this.hasAction = hasAction;
     }
 }
