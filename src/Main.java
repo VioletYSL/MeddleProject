@@ -14,7 +14,7 @@ public class Main {
 
 //        TexasHoldem game =new TexasHoldem();
         ArrayList<Player> ps = new ArrayList<>();
-        Table game = new Table();
+        starttest01 game = new starttest01();
         Player p1 = new Player("brad01");
         Player p2 = new Player("brad02");
         Player p3 = new Player("brad03");

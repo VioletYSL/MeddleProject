@@ -3,6 +3,22 @@ package meddle.Entity;
 public class PotCalculator {
     private int pot;
     private int bet;
+    private int baseBet;
+
+    public int getBaseBet() {
+        return baseBet;
+    }
+
+    public void setBaseBet(int baseBet) {
+        this.baseBet = baseBet;
+    }
+
+
+    public void setBet(int bet) {
+        this.bet = bet;
+    }
+
+
 
     public PotCalculator() {
         this.pot = 0;

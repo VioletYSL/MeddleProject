@@ -111,28 +111,30 @@ public class Table {
                 currentPlayerIndex = (currentPlayerIndex == playerCount) ? 0 : currentPlayerIndex;
                 if (!players.get(currentPlayerIndex).hasFolded()) {
                     System.out.printf("玩家 %s 位置: %s 目前BET: %d  目前POT: %d \n", players.get(currentPlayerIndex).getName(), players.get(currentPlayerIndex).getPosition(), PC.getBet(), PC.getPot());
+                    ArrayList<Card> cc = players.get(currentPlayerIndex).getCards();
+                    for (Card c:cc) {
+                        System.out.printf("手牌為 :  %s %s\n",c.getSuit(),c.getRank());
+                    }
                     playerAction(currentPlayerIndex);
                 }
                 currentPlayerIndex = (currentPlayerIndex + 1) % maxPlayers;
             }else{
                 break;
             }
-        }while (!allPlayershasaction());
-        if (allButOneFolded()){
-            end();
-        }
-        PC.resetBet();
-        System.out.println("翻牌");
-        for(int v=0;v<3;v++){
-            communityCards.add(deck.dealCard());
-        }
+        } while (!allPlayershasaction());
 
-        for(int i=0;i<3;i++) {
-            for (Card deckcards:communityCards) {
-                System.out.printf("%s  %s \n",deckcards.getSuit(),deckcards.getRank());
+        if (!allButOneFolded()){
+            PC.resetBet();
+            System.out.println("翻牌");
+            for(int v=0;v<3;v++){
+                communityCards.add(deck.dealCard());
             }
-             currentPlayerIndex = (players.indexOf(seats[1]) ) % maxPlayers;
-            do{
+            for(int i=0;i<3;i++) {
+                for (Card deckcards:communityCards) {
+                    System.out.printf("%s  %s \n",deckcards.getSuit(),deckcards.getRank());
+                }
+                currentPlayerIndex = (players.indexOf(seats[1]) ) % maxPlayers;
+                do{
                     currentPlayerIndex = (currentPlayerIndex == playerCount) ? 0 : currentPlayerIndex;
                     if (!players.get(currentPlayerIndex).hasFolded()) {
                         System.out.printf("玩家 %s 位置: %s 目前BET: %d  目前POT: %d \n" ,players.get(currentPlayerIndex).getName(),players.get(currentPlayerIndex).getPosition(),PC.getBet(),PC.getPot());
@@ -141,10 +143,22 @@ public class Table {
                     currentPlayerIndex = (currentPlayerIndex + 1) % maxPlayers;
 
 
-            }while (!allPlayershasaction()||allButOneFolded());
-            System.out.println(i);
-            System.out.println("------------------");
+                }while (!allPlayershasaction()||allButOneFolded());
+                System.out.println(i);
+                System.out.println("------------------");
+            }
+
+        }else {
+            end();
         }
+
+
+
+
+
+    }
+
+    public void battle(){
         Player winner = null;
         int winningHandValue = 0;
         for (Player player : players) {
@@ -160,7 +174,6 @@ public class Table {
             }
         }
         System.out.printf("最後贏家為: %s 手牌為: %s\n",winner.getName(),winningHandValue);
-
 
     }
 

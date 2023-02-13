@@ -11,6 +11,18 @@ public class Player {
 
     private Boolean  hasAction;
 
+    public int getPlayerBet() {
+        return playerBet;
+    }
+
+    public void setPlayerBet(int playerBet) {
+        this.playerBet = playerBet;
+    }
+    public void resetBet(){
+        this.playerBet=0;
+    }
+    private int playerBet;
+
     public String getPosition() {
         return position;
     }
@@ -63,8 +75,9 @@ public class Player {
     }
 
     public void call(int bet) {
-    chips = chips -bet;
-        setHasAction(true);
+    chips = chips - bet;
+    this.setPlayerBet(bet);
+    setHasAction(true);
     }
 
     public void raise(int bet) {

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="02101615">
+    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="02082251">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_2_10__05_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_2_10__05_27__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_2_9__03_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023_2_9__03_40__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/meddle/Controller/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Controller/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/meddle/Controller/starttest01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Controller/starttest01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/meddle/Entity/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/meddle/Entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/meddle/Entity/PotCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/PotCalculator.java" afterDir="false" />
     </list>
@@ -256,7 +252,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
-          <line>21</line>
+          <line>9</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -266,17 +262,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>170</line>
+          <line>183</line>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>171</line>
+          <line>184</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>174</line>
+          <line>187</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -291,22 +287,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>136</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>185</line>
+          <line>198</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>181</line>
+          <line>194</line>
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -326,17 +312,62 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="78" />
+          <line>145</line>
+          <option name="timeStamp" value="118" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
-          <line>103</line>
-          <option name="timeStamp" value="79" />
+          <line>138</line>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
+          <line>141</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="124" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
+          <line>269</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
+          <line>265</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
+          <line>268</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/starttest01.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="133" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>167</line>
+          <line>180</line>
           <properties class="meddle.Controller.Table" method="allPlayershasaction">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -345,7 +376,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>178</line>
+          <line>191</line>
           <properties class="meddle.Controller.Table" method="allButOneFolded">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -354,6 +385,11 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MeddleProject$EvaDemo.ic" NAME="EvaDemo Coverage Results" MODIFIED="1675864024185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
