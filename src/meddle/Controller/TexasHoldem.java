@@ -58,6 +58,7 @@ public class TexasHoldem {
                     if(currentPlayer.getPlayerBet() <= PC.getBet()){
                         currentPlayer.call(bet);
                         PC.addToPot(bet);
+
                         break;
                     }
                     System.out.println("扣寫錯了!");
@@ -72,17 +73,32 @@ public class TexasHoldem {
                 Scanner s2 = new Scanner(System.in);
                 int raiseBet =0;
                 do{
+//                    raiseBet = 沒扣已經BET的金額
+
                     int n = s2.nextInt();
+                    int bet = 0;  // bet = 差額 我要再拿出來籌碼
                     raiseBet = n * PC.getBaseBet();
-                    if(raiseBet > PC.getBet()){
-                        PC.setBet(raiseBet);
-                        currentPlayer.raise(PC.getBet());
-                        PC.addToPot(PC.getBet());
+                    if(n * PC.getBet() != 0){
+                        raiseBet = n * PC.getBet();
+                    }
+                    if(raiseBet == PC.getBet()){
+                        System.out.println("1被不能rise");
+//                        if(){
+
+//                        }else{
+//                            raiseBet =n*PC.getBet();
+//                            PC.setBet(raiseBet);
+//                            currentPlayer.raise(PC.getBet());
+//                            PC.addToPot(PC.getBet());
+//                        }
+
                     }else {
-                        raiseBet =n*PC.getBet();
                         PC.setBet(raiseBet);
-                        currentPlayer.raise(PC.getBet());
-                        PC.addToPot(PC.getBet());
+                        if(currentPlayer.getPlayerBet() < PC.getBet() ){
+                            bet = PC.getBet() - currentPlayer.getPlayerBet();
+                        }
+                        currentPlayer.raise(bet);
+                        PC.addToPot(bet);
                     }
                 }while (raiseBet !=  PC.getBet());
                 break;
@@ -94,7 +110,7 @@ public class TexasHoldem {
                     currentPlayer.check();
                     break;
                 }else{
-                    System.out.println("去CALL拉");
+                    System.out.println("只能選擇call或fold");
                 }
             default:
                 if(action > 4){
@@ -170,6 +186,7 @@ public class TexasHoldem {
                         if (playerHandValue > winningHandValue) {
                             winner = player;
                             winningHandValue = playerHandValue;
+                            winner.addchips(PC.getPot());
                             break;
 
                         } else {
@@ -240,8 +257,10 @@ public class TexasHoldem {
             p.reset();
         }
         if(btnIndex <players.size()){
-            btnIndex++;
-            assignSeats();
+            Player pp = players.get(0);
+            players.remove(0);
+            players.add((players.size()),pp);
+            addPlayers(players);
 
         }else{
             btnIndex=0;

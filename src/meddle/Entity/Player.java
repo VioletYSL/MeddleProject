@@ -83,7 +83,7 @@ public class Player {
 
     public void raise(int bet) {
     chips =chips -bet;
-    this.setPlayerBet(bet);
+    this.setPlayerBet(getPlayerBet()+bet);
     setHasAction(false);
     }
 

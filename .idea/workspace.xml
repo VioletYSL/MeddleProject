@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="02101615">
+    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="02082251">
+      <change afterPath="$PROJECT_DIR$/src/MyGUI/MyGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MyGUI/MytestGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/meddle/Controller/starttest01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/meddle/Entity/EvaDemo2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/meddle/Entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Entity/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +29,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="32dcdefd-32f7-43e9-bca0-fe758baaa997" />
+        <option name="url" value="https://github.com/VioletYSL/MeddleProject.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -36,14 +51,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/MeddleProject&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/codepractive/test"
   }
-}</component>
-  <component name="RunManager" selected="Application.Main">
+}]]></component>
+  <component name="RunManager" selected="Application.MytestGUI">
     <configuration name="EvaDemo" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="java.Entity.EvaDemo" />
       <module name="MeddleProject" />
@@ -58,11 +73,11 @@
       </method>
     </configuration>
     <configuration name="EvaDemo2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="meddle.Entity.EvaDemo2" />
-      <module name="MeddleProject" />
+      <option name="MAIN_CLASS_NAME" value="EvaDemo2" />
+      <module name="test01" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="meddle.Entity.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,12 +92,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TexasHoldem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="meddle.Controller.TexasHoldem" />
+    <configuration name="MyGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyGUI.MyGUI" />
       <module name="MeddleProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="meddle.Controller.*" />
+          <option name="PATTERN" value="MyGUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,12 +105,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="meddle.Entity.EvaDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="meddle.Entity.EvaDemo" />
+    <configuration name="MytestGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyGUI.MytestGUI" />
       <module name="MeddleProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="meddle.Entity.*" />
+          <option name="PATTERN" value="MyGUI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MytestGUI" />
+        <item itemvalue="Application.MyGUI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.EvaDemo2" />
         <item itemvalue="Application.starttest01" />
-        <item itemvalue="Application.TexasHoldem" />
-        <item itemvalue="Application.meddle.Entity.EvaDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -200,39 +215,54 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo2.java</url>
+          <url>file://$PROJECT_DIR$/../test/src/EvaDemo2.java</url>
           <line>113</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo2.java</url>
+          <url>file://$PROJECT_DIR$/../test/src/EvaDemo2.java</url>
           <line>118</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo2.java</url>
+          <url>file://$PROJECT_DIR$/../test/src/EvaDemo2.java</url>
           <line>143</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo2.java</url>
+          <url>file://$PROJECT_DIR$/../test/src/EvaDemo2.java</url>
           <line>146</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo2.java</url>
+          <url>file://$PROJECT_DIR$/../test/src/EvaDemo2.java</url>
           <line>149</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo2.java</url>
+          <url>file://$PROJECT_DIR$/../test/src/EvaDemo2.java</url>
           <line>124</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Entity/EvaDemo.java</url>
+          <url>file://$PROJECT_DIR$/../test/src/EvaDemo.java</url>
           <line>158</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
+          <line>273</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
+          <line>274</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
+          <line>275</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
@@ -266,16 +296,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
           <line>198</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
@@ -301,103 +321,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>251</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>255</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>256</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>265</line>
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>269</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>271</line>
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
           <line>268</line>
-          <option name="timeStamp" value="110" />
+          <option name="timeStamp" value="135" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="114" />
+          <line>259</line>
+          <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
           <line>40</line>
-          <option name="timeStamp" value="115" />
+          <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
           <line>39</line>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>132</line>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>133</line>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>134</line>
-          <option name="timeStamp" value="120" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>135</line>
-          <option name="timeStamp" value="121" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>136</line>
-          <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>137</line>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="124" />
+          <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/Table.java</url>
@@ -419,24 +359,36 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
+          <line>243</line>
+          <properties class="meddle.Controller.TexasHoldem" method="end">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java</url>
           <line>33</line>
           <properties class="meddle.Controller.TexasHoldem" method="assignSeats">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="81" />
+          <option name="timeStamp" value="139" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/MyGUI/MyGUI.java</url>
+          <line>12</line>
+          <properties class="MyGUI.MyGUI" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="145" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <pin-to-top-manager>
-      <pinned-members>
-        <PinnedItemInfo parentTag="meddle.Entity.Deck" memberName="maxPlayers" />
-        <PinnedItemInfo parentTag="meddle.Entity.Deck" memberName="players" />
-      </pinned-members>
-    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="btnIndex" language="JAVA" />
+        <watch expression="this" />
       </configuration>
     </watches-manager>
   </component>
