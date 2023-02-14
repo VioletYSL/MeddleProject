@@ -1,21 +1,26 @@
 package meddle.Controller;
 
-
-
 import meddle.Entity.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class TexasHoldem {
+    private static final int NUM_SEATS = 12;
     private final int maxPlayers = 12;
-    private ArrayList<Player> players = new ArrayList<>() ;
+    private ArrayList<Player> players = new ArrayList<>();
     private Player[] seats = new Player[maxPlayers];
+    private static final String[] SEAT_CODES = { "BTN", "SB", "BB", "UTG1", "UTG2", "UTG3", "UTG4", "UTG5", "UTG6", "CO", "HJ", "Cutoff" };
 
     private ArrayList<Card> communityCards;
     private Deck deck;
-    private PotCalculator PC =new PotCalculator();
+    private PotCalculator PC;
+    private int btnIndex =0;
+    private Boolean hasend = false;
 
+    // 添加玩家
     public void addPlayers(ArrayList<Player> players) {
         this.players = players;
         for (int i = 0; i < players.size(); i++) {
@@ -24,19 +29,20 @@ public class TexasHoldem {
         assignSeats();
 
     }
-    private void assignSeats() {
-//        int btnIndex = (int) (Math.random() * players.size());
-        int btnIndex = 0;
-        seats[btnIndex].setPosition("BTN");
-        seats[(btnIndex + 1) % players.size()].setPosition("SB");
-        seats[(btnIndex + 2) % players.size()].setPosition("BB");
-        for (int i = 0; i < players.size(); i++) {
-            if (seats[i].getPosition()==null) {
-                seats[i].setPosition("UTG" + (i + 1));
-            }
-        }
 
-    }
+    // 分配座位
+    private void assignSeats() {
+//        btnIndex = (btnIndex) % NUM_SEATS;
+//        int sbIndex = (btnIndex + 1) % NUM_SEATS;
+//        int bbIndex = (sbIndex + 1) % NUM_SEATS;
+
+//        int btnIndex = (int) (Math.random() * players.size());
+        for (int i = 0; i <players.size(); i++) {
+            seats[(i)%players.size()].setPosition(SEAT_CODES[(btnIndex+i)%players.size()]);
+        }
+   }
+
+    // 玩家選擇行為
     public void playerAction(int playerIndex) {
 //        System.out.println(count);
         Player currentPlayer = seats[playerIndex];
@@ -46,73 +52,241 @@ public class TexasHoldem {
         int action = currentPlayer.chooseAction(choose);
         switch (action) {
             case 1:
-                currentPlayer.call(PC.getBet());
-                break;
+
+                if(currentPlayer.getPlayerBet()< PC.getBet() ){
+                    int bet = PC.getBet() - currentPlayer.getPlayerBet();
+                    if(currentPlayer.getPlayerBet() <= PC.getBet()){
+                        currentPlayer.call(bet);
+                        PC.addToPot(bet);
+                        break;
+                    }
+                    System.out.println("扣寫錯了!");
+                    break;
+                }else{
+                    System.out.println("沒人RISE 你不能CALL");
+                    playerAction(playerIndex);
+                    break;
+                }
+
             case 2:
-                currentPlayer.raise(PC.getBet());
+                Scanner s2 = new Scanner(System.in);
+                int raiseBet =0;
+                do{
+                    int n = s2.nextInt();
+                    raiseBet = n * PC.getBaseBet();
+                    if(raiseBet > PC.getBet()){
+                        PC.setBet(raiseBet);
+                        currentPlayer.raise(PC.getBet());
+                        PC.addToPot(PC.getBet());
+                    }else {
+                        raiseBet =n*PC.getBet();
+                        PC.setBet(raiseBet);
+                        currentPlayer.raise(PC.getBet());
+                        PC.addToPot(PC.getBet());
+                    }
+                }while (raiseBet !=  PC.getBet());
                 break;
             case 3:
                 currentPlayer.fold();
                 break;
             case 4:
-                currentPlayer.check();
-                break;
+                if( PC.getBet() - currentPlayer.getPlayerBet() ==0){
+                    currentPlayer.check();
+                    break;
+                }else{
+                    System.out.println("去CALL拉");
+                }
             default:
-                break;
+                if(action > 4){
+
+                    break;
+                }else{
+                    System.out.println("請決定好你的選擇");
+
+                    playerAction(playerIndex);
+                }
         }
     }
 
-
-
-        public void startGame() {
-            // Deal two cards to each player
+    public void startGame() {
+        do {
+            hasend =false;
             deck = new Deck();
             deck.shuffle();
+            deck.dealCard();
             communityCards = new ArrayList<>();
             PC = new PotCalculator();
-
-            int bet =10;
-            int pot=0;
-            //sb 下注10 bb下注20
-            seats[2].raise(PC.getBet());
-            //發2張牌給每位玩家
+            PC.setBaseBet(20);
+            // 發牌
             for (int i = 0; i < 2; i++) {
                 for (Player player : players) {
                     player.addCard(deck.dealCard());
                 }
             }
+//            int currentPlayerIndex = (players.indexOf(seats[2]) + 1 % maxPlayers);
+//            long playerCount = Arrays.stream(seats)
+//                    .filter(Objects::nonNull)
+//                    .count(); // 老師沒教過的
+            //小盲大盲下注
 
-
-            // Flop: deal three community cards
-            for (int i = 0; i < 3; i++) {
-                communityCards.add(deck.dealCard());
-            }
-
-            // Turn: deal one more community card
-            communityCards.add(deck.dealCard());
-
-            // River: deal one final community card
-            communityCards.add(deck.dealCard());
-
-            // Players take turns betting
-
-
-
-            // Determine the winner
-            Player winner = null;
-            int winningHandValue = 0;
-            for (Player player : players) {
-                if (!player.hasFolded()) {
-                    int playerHandValue = HandEvaluator.evaluateHand(player.getCards(), communityCards);
-                    if (playerHandValue > winningHandValue) {
-                        winner = player;
-                        winningHandValue = playerHandValue;
-                    } else {
-
-
+            seats[1].raise(PC.getBet());
+            seats[1].setPlayerBet(PC.getBet());
+            PC.placeBet(1);
+            PC.addToPot(PC.getBet());
+            seats[2].raise(2 * PC.getBet());
+            seats[2].setPlayerBet(2 * PC.getBet());
+            PC.placeBet(2);
+            PC.addToPot(PC.getBet());
+            // 翻牌前 由UTG 開始行動
+            Action(1);
+            resetPlayerBet();
+            PC.resetBet();
+//        while (!hasend){Action(1);}
+            //翻牌圈
+            while (!hasend) {
+                for (int j = 0; j <= 4; j++) {
+                    if (j <= 2) {
+                        communityCards.add(deck.dealCard());
+                        continue;
                     }
+                    System.out.println("-----------------");
+                    for (Card c : communityCards) {
+                        System.out.printf("%s %s \n", c.getSuit(), c.getRank());
+                    }
+                    Action(2);
+                    resetPlayerBet();
+                    communityCards.add(deck.dealCard());
+                }
+                for (Card c : communityCards) {
+                    System.out.printf("%s %s \n", c.getSuit(), c.getRank());
+                }
+                Action(2);
+                resetPlayerBet();
+                Player winner = null;
+                int winningHandValue = 0;
+                for (Player player : players) {
+                    if (!player.hasFolded()) {
+                        int playerHandValue = HandEvaluator.evaluateHand(player.getCards(), communityCards);
+                        if (playerHandValue > winningHandValue) {
+                            winner = player;
+                            winningHandValue = playerHandValue;
+                            break;
+
+                        } else {
+                            // 當手牌價值一樣時,判斷牌的大小
+                            end();
+                        }
+                    }
+                }
+                System.out.printf("贏家為: %s 牌型為: %s\n", winner.getName(), winningHandValue);
+                System.out.println("---------------------------------------");
+                break;
+            }
+            end();
+        }while (players.size()<2);
+    }
+
+    public void Action(int round) {
+//        if(PC.getBet()==0){
+//            PC.setBet(PC.getBaseBet());
+//        }
+       int currentPlayerIndex = (players.indexOf(seats[2]) + 1) % maxPlayers;
+//        int currentPlayerIndex = (players.indexOf(Arrays.stream(seats).filter());
+        if(round == 2) {
+            currentPlayerIndex = (players.indexOf(seats[1])) % maxPlayers;
+        }
+
+        long playerCount = Arrays.stream(seats)
+                .filter(Objects::nonNull)
+                .count();
+        do {
+            if (!allButOneFolded()) {
+                currentPlayerIndex = (currentPlayerIndex == playerCount) ? 0 : currentPlayerIndex;
+                if (!players.get(currentPlayerIndex).hasFolded()) {
+                    System.out.printf("玩家: %s 籌碼: %d 位置: %s 目前BET: %d  目前POT: %d \n", players.get(currentPlayerIndex).getName(),players.get(currentPlayerIndex).getChips(), players.get(currentPlayerIndex).getPosition(), PC.getBet(), PC.getPot());
+                    ArrayList<Card> cc = players.get(currentPlayerIndex).getCards();
+                    for (Card c:cc) {
+                        System.out.printf("手牌為 :  %s %s\n",c.getSuit(),c.getRank());
+                    }
+                    playerAction(currentPlayerIndex);
+                }
+                currentPlayerIndex = (currentPlayerIndex + 1) % maxPlayers;
+            } else {
+                end();
+                break;
+            }
+        } while (!allPlayershasaction());
+        for (Player p:players) {
+            if(!p.hasFolded()){
+                p.setHasAction(false);
+            }
+        }
+
+    }
+
+    private void end(){
+        hasend =true;
+        if(allButOneFolded()){
+            for (Player pp:players) {
+                if(!pp.hasFolded()) {
+                    System.out.println("winner id : "+ pp.getName());
+                    pp.addchips(PC.getPot());
+                    System.out.println("----------------------------");
                 }
             }
         }
+        for (Player p: players) {
+            p.setPosition(null);
+            p.reset();
+        }
+        if(btnIndex <players.size()){
+            btnIndex++;
+            assignSeats();
+
+        }else{
+            btnIndex=0;
+            assignSeats();
+        }
+        startGame();
+    }
+    private void restartGame(){
+
+    }
+    private boolean hasend(){
+        return hasend;
+    }
+
+    private boolean allButOneFolded() {
+        int notFlod =0;
+        for (Player vv:players) {
+            if(vv.hasFolded() == true){
+                notFlod += 1;
+            }
+        }
+        if(notFlod!=players.size()-1){
+
+            return false;
+        }
+        return true;
+    }
+    private boolean allPlayershasaction() {
+        for (Player v:players) {
+
+            if (!v.getHasAction()){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void resetPlayerBet(){
+        long playerCount = Arrays.stream(seats)
+                .filter(Objects::nonNull)
+                .count();
+        for(int i =0 ; i < playerCount ; i++){
+            seats[i].resetBet();
+        }
+        PC.resetBet();
+    }
 
 }

@@ -35,7 +35,7 @@ public class Player {
     public Player(String name) {
         this.name = name;
         cards = new ArrayList<>();
-        chips = 500;
+        chips = 1000;
         isFolded = false;
         hasAction = false;
 
@@ -51,6 +51,7 @@ public class Player {
     public void addchips(int pot){
         chips += pot;
     }
+    public int getChips(){return chips;}
 
     public void placeBet(int bet) {
         chips -= bet;
@@ -76,13 +77,13 @@ public class Player {
 
     public void call(int bet) {
     chips = chips - bet;
-    this.setPlayerBet(bet);
+    this.setPlayerBet(getPlayerBet()+bet);
     setHasAction(true);
     }
 
     public void raise(int bet) {
     chips =chips -bet;
-
+    this.setPlayerBet(bet);
     setHasAction(false);
     }
 
@@ -97,5 +98,11 @@ public class Player {
 
     public void setHasAction(Boolean hasAction) {
         this.hasAction = hasAction;
+    }
+
+    public void reset(){
+        isFolded = false;
+        cards = new ArrayList<>();
+        hasAction = false;
     }
 }
