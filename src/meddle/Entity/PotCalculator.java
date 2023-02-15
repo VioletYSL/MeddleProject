@@ -45,11 +45,11 @@ public class PotCalculator {
         return bet;
     }
 
-    public void updatePot(int remainingPlayers) {
-        if (remainingPlayers <= 1) {
-            addToPot(bet);
-            resetBet();
-        }
-    }
+//    public void updatePot(int remainingPlayers) {
+//        if (remainingPlayers <= 1) {
+//            addToPot(bet);
+//            resetBet();
+//        }
+//    }
 }
 

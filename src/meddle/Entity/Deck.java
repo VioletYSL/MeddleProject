@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Deck {
-    private final int maxPlayers = 12;
+    private final int maxPlayers = 10;
     private ArrayList<Player> players = new ArrayList<>() ;
     private Player[] seats = new Player[maxPlayers];
     private ArrayList<Card> cards;
-    private int pot;
-    private int bet;
+
+
     public Deck() {
         cards = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             for (int j = 1; j <= 13; j++) {
-                cards.add(new Card(i, j));
+                cards.add(new Card(i, j,"src/image/card"+i*13+j+".jpg"));
             }
         }
     }

@@ -18,14 +18,24 @@ public class MyPanel extends JPanel {
 
 
     public MyPanel() {
+        setLayout(new BorderLayout());
         // 建立圖片
         image = new ImageIcon("src/image/NEWTable.png");
         label = new JLabel(image);
         label.setHorizontalAlignment(JLabel.CENTER);
+        ComPanel = new CommunitInterface();
+
+//        add(ComPanel,BorderLayout.CENTER);
 
 
-        // 將圖片加入JPanel
-        add(label);
+    }
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        if (image != null) {
+            // 繪製圖像時自動調整圖像的大小以適應容器的大小
+            g.drawImage(image.getImage(), 0, 0, getWidth(), getHeight(), null);
+        }
     }
 
 }

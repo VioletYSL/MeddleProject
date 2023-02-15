@@ -8,8 +8,9 @@ public class Player {
     private ArrayList<Card> cards;
     private int chips;
     private boolean isFolded;
-
+    private String  position;
     private Boolean  hasAction;
+    private int playerBet;
 
     public int getPlayerBet() {
         return playerBet;
@@ -21,7 +22,7 @@ public class Player {
     public void resetBet(){
         this.playerBet=0;
     }
-    private int playerBet;
+
 
     public String getPosition() {
         return position;
@@ -31,7 +32,7 @@ public class Player {
         this.position = position;
     }
 
-    private String  position;
+
     public Player(String name) {
         this.name = name;
         cards = new ArrayList<>();

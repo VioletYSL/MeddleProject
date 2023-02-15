@@ -27,6 +27,7 @@ public class MytestGUI implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1080, 720);
 
+
         // 設置背景圖片
         ImageIcon backgroundIcon = new ImageIcon("");
         backgroundLabel = new JLabel(backgroundIcon);
@@ -68,8 +69,9 @@ public class MytestGUI implements ActionListener {
         if (e.getSource() == startButton) {
             // 將介面換成遊戲介面
             gamePanel = new GamePanel();
-//            gamePanel.setBackground(Color.BLACK);
+            gamePanel.setBackground(Color.BLACK);
             frame.setContentPane(gamePanel);
+
             frame.revalidate();
             frame.repaint();
         } else if (e.getSource() == exitButton) {

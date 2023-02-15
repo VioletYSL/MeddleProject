@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class TexasHoldem {
-    private static final int NUM_SEATS = 10;
+//    private static final int NUM_SEATS = 10;
     private final int maxPlayers = 10;
     private ArrayList<Player> players = new ArrayList<>();
     private Player[] seats = new Player[maxPlayers];
@@ -173,6 +173,7 @@ public class TexasHoldem {
                     resetPlayerBet();
                     communityCards.add(deck.dealCard());
                 }
+                System.out.println("------------------");
                 for (Card c : communityCards) {
                     System.out.printf("%s %s \n", c.getSuit(), c.getRank());
                 }
@@ -183,16 +184,18 @@ public class TexasHoldem {
                 for (Player player : players) {
                     if (!player.hasFolded()) {
                         int playerHandValue = HandEvaluator.evaluateHand(player.getCards(), communityCards);
+                        System.out.printf("%s  : %d \n",player.getName(),playerHandValue);
                         if (playerHandValue > winningHandValue) {
                             winner = player;
                             winningHandValue = playerHandValue;
                             winner.addchips(PC.getPot());
-                            break;
 
-                        } else {
-                            // 當手牌價值一樣時,判斷牌的大小
-                            end();
+
                         }
+//                        else {
+//                            // 當手牌價值一樣時,判斷牌的大小
+//
+//                        }
                     }
                 }
                 System.out.printf("贏家為: %s 牌型為: %s\n", winner.getName(), winningHandValue);
@@ -213,7 +216,7 @@ public class TexasHoldem {
             currentPlayerIndex = (players.indexOf(seats[1])) % maxPlayers;
         }
 
-        long playerCount = Arrays.stream(seats)
+        long playerCount =  Arrays.stream(seats)
                 .filter(Objects::nonNull)
                 .count();
         do {
