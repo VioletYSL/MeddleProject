@@ -14,13 +14,14 @@ public class MyPanel extends JPanel {
 
     private ImageIcon image;
     private JLabel label;
+    private CommunitInterface ComPanel;
+
 
     public MyPanel() {
         // 建立圖片
         image = new ImageIcon("src/image/NEWTable.png");
         label = new JLabel(image);
         label.setHorizontalAlignment(JLabel.CENTER);
-
 
 
         // 將圖片加入JPanel

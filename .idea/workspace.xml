@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="02101615">
-      <change afterPath="$PROJECT_DIR$/src/MyGUI/GamePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyGUI/MyPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e44fa7f0-fcbd-49cb-a9c6-c9ca5e2a13d1" name="Changes" comment="02151506">
+      <change afterPath="$PROJECT_DIR$/src/MyGUI/CommunitInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MyGUI/DeckInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MyGUI/HandCardsInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MyGUI/PlayerInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyGUI/MyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyGUI/MyGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyGUI/MytestGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyGUI/MytestGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyGUI/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyGUI/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyGUI/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyGUI/MyPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/downyi.com (48).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image/downyi.com (5).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/meddle/Controller/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Controller/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/meddle/Controller/TexasHoldem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +93,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="MeddleProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MyGUI.MyPanel" />
       <module name="MeddleProject" />
@@ -114,26 +126,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaintingIconEx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MyGUI.PaintingIconEx" />
-      <module name="MeddleProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="MyGUI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MytestGUI" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MyPanel" />
         <item itemvalue="Application.GameFrame" />
         <item itemvalue="Application.HomePanel" />
-        <item itemvalue="Application.PaintingIconEx" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676016957340</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="02151506">
+      <created>1676444793341</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676444793341</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,7 +211,8 @@
     <MESSAGE value="02082143" />
     <MESSAGE value="02101609" />
     <MESSAGE value="02101615" />
-    <option name="LAST_COMMIT_MESSAGE" value="02101615" />
+    <MESSAGE value="02151506" />
+    <option name="LAST_COMMIT_MESSAGE" value="02151506" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -377,7 +384,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MyGUI/GamePanel.java</url>
-          <line>32</line>
+          <line>36</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

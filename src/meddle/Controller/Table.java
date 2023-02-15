@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Table {
-    private final int maxPlayers = 12;
+    private final int maxPlayers = 10;
     private ArrayList<Player> players = new ArrayList<>() ;
     private Player[] seats = new Player[maxPlayers];
 

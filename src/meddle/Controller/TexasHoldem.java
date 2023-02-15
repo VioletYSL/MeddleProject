@@ -8,11 +8,11 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class TexasHoldem {
-    private static final int NUM_SEATS = 12;
-    private final int maxPlayers = 12;
+    private static final int NUM_SEATS = 10;
+    private final int maxPlayers = 10;
     private ArrayList<Player> players = new ArrayList<>();
     private Player[] seats = new Player[maxPlayers];
-    private static final String[] SEAT_CODES = { "BTN", "SB", "BB", "UTG1", "UTG2", "UTG3", "UTG4", "UTG5", "UTG6", "CO", "HJ", "Cutoff" };
+    private static final String[] SEAT_CODES = { "BTN", "SB", "BB", "UTG1", "UTG2", "UTG3", "UTG4", "CO", "HJ", "Cutoff" };
 
     private ArrayList<Card> communityCards;
     private Deck deck;

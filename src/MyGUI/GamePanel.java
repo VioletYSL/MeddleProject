@@ -10,6 +10,7 @@ public class GamePanel extends JPanel {
     private JButton foldButton;
     private JButton checkButton;
     private MyPanel myPanel;
+    private CommunitInterface ComPanel;
 
 
 
@@ -22,6 +23,7 @@ public class GamePanel extends JPanel {
         foldButton = new JButton("Fold");
         checkButton = new JButton("Check");
         myPanel = new MyPanel();
+        ComPanel = new CommunitInterface();
 
 
         buttonPanel.add(callButton);
@@ -30,6 +32,8 @@ public class GamePanel extends JPanel {
         buttonPanel.add(checkButton);
         add(buttonPanel, BorderLayout.SOUTH);
         add(myPanel,BorderLayout.CENTER);
+
+
 
     }
 }
